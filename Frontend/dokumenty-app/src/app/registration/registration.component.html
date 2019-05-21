@@ -1,0 +1,41 @@
+<div>
+  <h2 class="display">Rejestracja</h2>
+  <form #registrationForm="ngForm" (ngSubmit)="onRegistration(registrationForm)" novalidate>
+    <div class="form-group">
+
+      <div class="form-group">
+        <label for="email">Adres e-mail </label>
+        <input id="email" class="form-control" type="email" name="email" ngModel #email="ngModel" required minlength="3"
+          maxlength="50" [email]="true" placeholder="name@example.com" />
+        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+          <div *ngIf="email.errors.required">Pole wymagane</div>
+          <div *ngIf="email.errors.email">Niepoprawny e-mail</div>
+          <div *ngIf="email.errors.minlength">Minimum {{email.errors.minlength.requiredLength}} znaki</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Hasło </label>
+        <input id="password" class="form-control" type="password" name="password" ngModel #password="ngModel" required
+          minlength="3" maxlength="25" />
+        <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+          <div *ngIf="password.errors.required">Pole wymagane</div>
+          <div *ngIf="password.errors.minlength">Minimum {{password.errors.minlength.requiredLength}} znaki</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="passwordConfirmation">Potwierdź hasło </label>
+        <input id="passwordConfirmation" class="form-control" type="password" name="passwordConfirmation"
+          ngModel #passwordConfirmation="ngModel" required />
+        <div class="alert alert-danger" *ngIf="passwordConfirmation.touched && !passwordConfirmation.valid">
+          <div *ngIf="passwordConfirmation.errors.required">Pole wymagane</div>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-primary">Zarejestruj</button>
+
+    </div>
+  </form>
+
+</div>

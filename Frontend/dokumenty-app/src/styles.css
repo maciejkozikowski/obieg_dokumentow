@@ -1,0 +1,19 @@
+/* globalne style */
+body{
+    background-color: #FFD37B;
+}
+
+/* style do validacji inputów */
+.ng-valid[required], 
+.ng-valid.required  {
+    border: 2px solid rgb(70, 221, 77);
+  }
+  
+.ng-invalid:not(form)  {
+    border: 2px solid #e94d4a;
+  }
+
+  .ng-untouched:not(form)  {
+    border: 2px solid #7485b4;
+  }
+
