@@ -1,0 +1,15 @@
+.container{
+    width: 90%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+
+}
+.table{
+    width:70%;
+    margin-top:5%;
+    float: left;
+}
+img{
+    width: 70%;
+    height: 70%;
+}

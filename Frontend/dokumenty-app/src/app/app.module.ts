@@ -1,12 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { Routes } from "@angular/router";
+import { Routes } from '@angular/router';
+import { ListdocumentComponent } from './listdocument/listdocument.component';
+import { AdddelComponent } from './adddel/adddel.component';
+import { AddfileComponent } from './addfile/addfile.component';
 
 const appRoutes: Routes = [
   {
@@ -27,7 +30,10 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ListdocumentComponent,
+    AdddelComponent,
+    AddfileComponent
   ],
   imports: [
     BrowserModule,
