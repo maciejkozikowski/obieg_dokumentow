@@ -10,6 +10,10 @@ import { Routes } from '@angular/router';
 import { ListdocumentComponent } from './listdocument/listdocument.component';
 import { AdddelComponent } from './adddel/adddel.component';
 import { AddfileComponent } from './addfile/addfile.component';
+import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
+
 
 const appRoutes: Routes = [
   {
@@ -33,12 +37,15 @@ const appRoutes: Routes = [
     RegistrationComponent,
     ListdocumentComponent,
     AdddelComponent,
-    AddfileComponent
+    AddfileComponent,
+    FooterComponent,
+
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

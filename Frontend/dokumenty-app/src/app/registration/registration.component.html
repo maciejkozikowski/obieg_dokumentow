@@ -2,7 +2,6 @@
   <h2 class="display">Rejestracja</h2>
   <form #registrationForm="ngForm" (ngSubmit)="onRegistration(registrationForm)" novalidate>
     <div class="form-group">
-
       <div class="form-group">
         <label for="email">Adres e-mail </label>
         <input id="email" class="form-control" type="email" name="email" ngModel #email="ngModel" required minlength="3"
