@@ -13,12 +13,17 @@ import { AddfileComponent } from './addfile/addfile.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
+import { HttpClientModule } from '@angular/common/http';
 
-
+//ścierzki w adresie URL 
 const appRoutes: Routes = [
   {
+    path: 'index',
+    component: AppComponent
+  },
+  {
     path: '',
-    component: LoginComponent
+    component: AppComponent
   },
   {
     path: 'login',
@@ -27,7 +32,11 @@ const appRoutes: Routes = [
   {
     path: 'registration',
     component: RegistrationComponent
-  }
+  },
+  {
+    path: 'rejestracja',
+    component: RegistrationComponent
+  },
 ];
 
 @NgModule({
@@ -39,13 +48,13 @@ const appRoutes: Routes = [
     AdddelComponent,
     AddfileComponent,
     FooterComponent,
-
     NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

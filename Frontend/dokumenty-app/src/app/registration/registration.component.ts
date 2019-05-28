@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-registration',
@@ -7,18 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }
+
+  serverPath = "http://localhost:8080"; //adres serwera
 
   //rejestracja
   onRegistration(registrationForm) {
 
     if (registrationForm.valid && registrationForm.value.password == registrationForm.value.passwordConfirmation) //jeśli wszystkie pola są poprawne
     {
-      alert("Rejestrowanie");
-      console.log(registrationForm.value);
+      console.log(registrationForm.value); //registrationForm.value - objekt w JSON
+      let url = "/user/registration"; //ścierzka do rejstracji 
+      this.http.post(this.serverPath + url, registrationForm.value).subscribe(
+        isValid => { //gdy się zarejstrujemu
+          location.assign("/login");
+        },
+        err => { alert("Error: server not responding") } //gdy jest błąd
+      );
     }
     else alert("Error");
   }
