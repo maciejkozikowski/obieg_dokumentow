@@ -12,6 +12,12 @@ import { EditComponent } from './components/edit/edit.component';
 
 import { AdunitService } from './adunit.service';
 
+import { LoginComponent } from './components/login/login.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+
+
 const routes: Routes = [
   {
     path: 'create',
@@ -24,6 +30,22 @@ const routes: Routes = [
   {
     path: 'index',
     component: IndexComponent
+  },
+  {
+    path: 'footer',
+    component: FooterComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'navbar',
+    component: NavbarComponent
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent
   }
 ];
 
@@ -33,6 +55,11 @@ const routes: Routes = [
     CreateComponent,
     IndexComponent,
     EditComponent,
+    LoginComponent,
+    FooterComponent,
+    NavbarComponent,
+    RegistrationComponent,
+
   ],
   imports: [
     BrowserModule,
