@@ -16,11 +16,6 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AddfileComponent } from './components/addfile/addfile.component';
-
-import { LoginComponent } from './components/login/login.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { RegistrationComponent } from './components/registration/registration.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 
 
