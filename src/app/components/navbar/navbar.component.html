@@ -1,0 +1,20 @@
+<ng2-slim-loading-bar color="blue"></ng2-slim-loading-bar>
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar">
+  <a class="navbar-brand" href="/" routerLink="addfile" routerLinkActive="active">
+    <img routerLink="" routerLinkActive="active" src="favicon.ico" width="30" height="30"
+      class="d-inline-block align-top" alt="Obieg dokumentow">Obieg
+    dokumentów</a>
+  <div *ngIf="isLoggedIn; else loggedOut">
+    Logged in as {{role}}.
+  </div>
+  <ng-template #loggedOut>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <button class="btn btn-secondary" routerLink="login" routerLinkActive="active">Logowanie</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary" routerLink="registration" routerLinkActive="active">Rejestracja</button>
+      </li>
+    </ul>
+  </ng-template>
+</nav>
