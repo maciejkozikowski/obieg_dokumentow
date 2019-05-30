@@ -21,6 +21,7 @@ import { LoginComponent } from './components/login/login.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 
 const routes: Routes = [
@@ -50,15 +51,16 @@ const routes: Routes = [
   },
   {
     path: 'registration',
-    component: RegistrationComponent
-<<<<<<< HEAD
+
   },
   {
-    path: 'addfile',
+    path: 'pagination',
     component: AddfileComponent
-=======
->>>>>>> 2382618f1589595ce4dc2640a512ecf2b9110312
-  }
+},
+{
+  path: 'addfile',
+  component: PaginationComponent
+}
 ];
 
 @NgModule({
@@ -68,17 +70,16 @@ const routes: Routes = [
     IndexComponent,
     EditComponent,
     LoginComponent,
-<<<<<<< HEAD
+
     RegistrationComponent,
     NavbarComponent,
     FooterComponent,
     AddfileComponent,
-=======
+    PaginationComponent,
+
     FooterComponent,
     NavbarComponent,
     RegistrationComponent,
-
->>>>>>> 2382618f1589595ce4dc2640a512ecf2b9110312
   ],
   imports: [
     BrowserModule,
