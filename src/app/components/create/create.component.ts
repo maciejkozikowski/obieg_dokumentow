@@ -4,7 +4,25 @@ import { AdunitService } from '../../adunit.service';
 
 @Component({
   selector: 'app-create',
-  templateUrl: './create.component.html',
+  template : `<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+
+      <div class="form-group">
+        <label class="col-md-4">Podaj nazwę</label>
+        <input type="text" class="form-control"/>
+      </div>
+      <div *ngIf="" class="alert alert-danger">
+        <div *ngIf="">
+          Dodaj nazwę
+        </div>
+      </div>
+      <div class="form-group">
+        <button (click)="addfile()" class="btn btn-primary">Dodaj plik</button>
+      </div>
+    </form>
+  </div>
+</div>`,
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {

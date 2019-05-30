@@ -17,6 +17,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AddfileComponent } from './components/addfile/addfile.component';
 
+import { LoginComponent } from './components/login/login.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+
+
 const routes: Routes = [
   {
     path: 'create',
@@ -45,10 +51,13 @@ const routes: Routes = [
   {
     path: 'registration',
     component: RegistrationComponent
+<<<<<<< HEAD
   },
   {
     path: 'addfile',
     component: AddfileComponent
+=======
+>>>>>>> 2382618f1589595ce4dc2640a512ecf2b9110312
   }
 ];
 
@@ -59,10 +68,17 @@ const routes: Routes = [
     IndexComponent,
     EditComponent,
     LoginComponent,
+<<<<<<< HEAD
     RegistrationComponent,
     NavbarComponent,
     FooterComponent,
     AddfileComponent,
+=======
+    FooterComponent,
+    NavbarComponent,
+    RegistrationComponent,
+
+>>>>>>> 2382618f1589595ce4dc2640a512ecf2b9110312
   ],
   imports: [
     BrowserModule,
