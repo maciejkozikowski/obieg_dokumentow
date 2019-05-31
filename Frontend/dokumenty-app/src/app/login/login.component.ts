@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
       let url = "/user/login"; //ścierzka do logowania 
       this.http.post(this.serverPath + url, loginForm.value).subscribe(
         isValid => { //gdy się zalogujemy
-          location.assign("/index");
+          location.assign("/user");
         },
         err => { alert("Error: server not responding") } //gdy jest błąd
       );

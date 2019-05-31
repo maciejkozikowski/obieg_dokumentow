@@ -3,6 +3,12 @@ body{
     background-color: #FFD37B;
 }
 
+.buttonUser
+{
+    min-height: 100px;
+    min-width: 150px;
+}
+
 /* style do validacji inputów */
 .ng-valid[required], 
 .ng-valid.required  {

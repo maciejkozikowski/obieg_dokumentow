@@ -1,0 +1,36 @@
+<!-- strona główna -->
+<div class="container-fluid">
+    <!-- navbar -->
+    <div class="app-navbar">
+        <app-navbar></app-navbar>
+    </div>
+    <div class="row"><br></div>
+    <div class="row">
+        <!-- logowanie -->
+        <div class="col-md-4">
+            <app-login></app-login>
+        </div>
+        <!-- rejestracja -->
+        <div class="col-md-4">
+            <app-registration></app-registration>
+        </div>
+        <!-- dodawanie bez logowania -->
+        <div class="col-md-4">
+            <app-addfile></app-addfile>
+        </div>
+    </div>
+    <div class="row"><br></div>
+    <!-- footer -->
+    <div class="app-footer">
+        <app-footer></app-footer>
+    </div>
+    <div class="row"><br></div>
+
+    <router-outlet></router-outlet>
+
+    Testowe
+    <a class="text-info" routerLink="/user">User</a><br>
+    <a class="text-info" routerLink="/admin">Admin</a>
+
+
+</div>
