@@ -1,18 +1,5 @@
-<table class="table table-hover">
-  <thead>
-  <tr>
-      <td>Ad Unit Name</td>
-      <td>Ad Unit Price</td>
-      <td colspan="2">Actions</td>
-  </tr>
-  </thead>
-
-  <tbody>
-      <tr *ngFor="let adunit of adunits">
-          <td>{{ adunit.unit_name }}</td>
-          <td>{{ adunit.unit_price }}</td>
-          <td><a [routerLink]="['/edit', adunit._id]" class="btn btn-primary">Edit</a></td>
-          <td><button (click)="deleteAdUnit(adunit._id)"  class="btn btn-danger">Delete</button></td>
-      </tr>
-  </tbody>
-</table>
+<div class="container text-center">
+        <h1><p>Witaj na stronie inteligentnego systemu elektronicznego zajmującego się obiegiem dokumentów !</p></h1>
+        <h5><p>Jeśli chcesz dodać dokument bez logowania kliknij przycisk</p></h5>
+        <button type="submit" class="btn btn-primary" routerLink="addfile" routerLinkActive="active"><h3>Dodaj dokument bez logowania</h3></button>
+      </div>

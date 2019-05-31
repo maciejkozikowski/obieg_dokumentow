@@ -1,0 +1,27 @@
+<div>
+  <h2 class="display">Logowanie</h2>
+  <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)" novalidate>
+    <div class="form-group">
+      <div class="form-group">
+        <label for="email">Adres e-mail </label>
+        <input id="email" class="form-control" type="email" name="email" ngModel #email="ngModel" required minlength="3"
+          maxlength="50" [email]="true" placeholder="name@example.com" />
+        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+          <div *ngIf="email.errors.required">Pole wymagane</div>
+          <div *ngIf="email.errors.email">Niepoprawny e-mail</div>
+          <div *ngIf="email.errors.minlength">Minimum {{email.errors.minlength.requiredLength}} znaki</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Hasło </label>
+        <input id="password" class="form-control" type="password" name="password" ngModel #password="ngModel" required
+          minlength="3" maxlength="25" />
+        <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+          <div *ngIf="password.errors.required">Pole wymagane</div>
+          <div *ngIf="password.errors.minlength">Minimum {{password.errors.minlength.requiredLength}} znaki</div>
+        </div>
+      </div>
+      <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Zaloguj</button>
+    </div>
+  </form>
+</div>

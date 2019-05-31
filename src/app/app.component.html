@@ -1,21 +1,10 @@
-<ng2-slim-loading-bar color="blue"></ng2-slim-loading-bar>
-<nav class="navbar navbar-expand-sm bg-light">
-  <div class="container-fluid">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a routerLink="create" class="nav-link" routerLinkActive="active">
-          Create Ad Units
-        </a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="index" class="nav-link" routerLinkActive="active">
-          All Ad Units
-        </a>
-      </li> 
-    </ul>
-  </div>
-</nav>
-
+<app-navbar></app-navbar>
 <div class="container">
   <router-outlet></router-outlet>
+  <div class="container text-center">
+    <h1><p>Witaj na stronie inteligentnego systemu elektronicznego zajmującego się obiegiem dokumentów !</p></h1>
+    <h5><p>Jeśli chcesz dodać dokument bez logowania kliknij przycisk</p></h5>
+    <button type="submit" class="btn btn-primary" routerLink="addfile" routerLinkActive="active"><h3>Dodaj dokument bez logowania</h3></button>
+  </div>
 </div>
+<app-footer></app-footer>

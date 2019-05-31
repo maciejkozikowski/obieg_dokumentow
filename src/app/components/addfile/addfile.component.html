@@ -1,0 +1,17 @@
+<div>
+  <form role="form" #addForm="ngForm" novalidate>
+      <div class="form-group">
+    <h2><label>Dodaj dokument bez logowania</label></h2>
+    <input id="nazwa" class="form-control" name="name" ngModel #name="ngModel" required minlength="3" maxlength="25"
+      placeholder="Nazwa pliku tekstowego lub pdf" />
+    <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+      <div *ngIf="name.errors.required">Pole wymagane</div>
+    </div>
+
+    <div class="form-group">
+      <input type="file" id="document" name="avatar" accept=".txt,.pdf,.rtf,.doc,.docx,.odt,.css,.html,.htm,.xml,.wps">
+    </div>
+    <button [disabled]="!addform.valid" type="submit" class="btn btn-primary">Wyślij</button>
+  </div>
+  </form>
+</div>
