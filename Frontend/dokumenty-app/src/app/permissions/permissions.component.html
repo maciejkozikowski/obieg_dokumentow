@@ -1,2 +1,25 @@
 <!-- nadawanie uprawnień userom-->
-nadawanie uprawnień userom
+<div class="container-fluid">
+    <h2>Nadawanie uprawnień użytkownikom</h2>
+
+    <div class="row">
+        <table class="table table-bordered table-hover table-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <th>id</th>
+                    <th>email</th>
+                    <th>uprawnienia</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let user of users">
+                <tr>
+                    <th>{{user.id}}</th>
+                    <td>{{user.email}}</td>
+                    <td>{{user.role}}</td>
+                    <td><button type="button" class="btn btn-info" (click)="dodajUprawnienie(user)">Zmień na ADMIN</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
