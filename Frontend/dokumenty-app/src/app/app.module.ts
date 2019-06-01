@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { Router, RouterModule, Routes } from "@angular/router";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,11 +11,13 @@ import { AdddelComponent } from './adddel/adddel.component';
 import { AddfileComponent } from './addfile/addfile.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
 import { HttpClientModule } from '@angular/common/http';
 import { IndexComponent } from './index/index.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
+import { SuperadminPageComponent } from './superadmin-page/superadmin-page.component';
+import { ApprovalComponent } from './approval/approval.component';
+import { PermissionsComponent } from './permissions/permissions.component';
 
 //ścierzki w adresie URL 
 const appRoutes: Routes = [
@@ -37,16 +38,24 @@ const appRoutes: Routes = [
     component: AdminPageComponent
   },
   {
+    path: 'superadmin',
+    component: SuperadminPageComponent
+  },
+  {
     path: 'dodaj',
-    component: AddfileComponent
+    component: AdddelComponent
   },
   {
     path: 'zatwierdz',
-    component: AdminPageComponent
+    component: ApprovalComponent
   },
   {
     path: 'przegladaj',
     component: ListdocumentComponent
+  },
+  {
+    path: 'uprawnienia',
+    component: PermissionsComponent
   }
 ];
 
@@ -62,7 +71,10 @@ const appRoutes: Routes = [
     NavbarComponent,
     IndexComponent,
     UserPageComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    SuperadminPageComponent,
+    ApprovalComponent,
+    PermissionsComponent
   ],
   imports: [
     BrowserModule,
