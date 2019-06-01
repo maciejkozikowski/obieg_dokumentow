@@ -18,6 +18,7 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { SuperadminPageComponent } from './superadmin-page/superadmin-page.component';
 import { ApprovalComponent } from './approval/approval.component';
 import { PermissionsComponent } from './permissions/permissions.component';
+import { FileUploadModule } from 'ng2-file-upload';
 
 //ścierzki w adresie URL 
 const appRoutes: Routes = [
@@ -81,7 +82,8 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes, {enableTracing:true}),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]
