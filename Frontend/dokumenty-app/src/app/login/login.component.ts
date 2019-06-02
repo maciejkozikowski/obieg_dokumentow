@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  serverPath = "http://localhost:8080"; //adres serwera
+  serverPath = "http://localhost:8000"; //adres serwera
 
   //logowanie
   onLogin(loginForm) {

@@ -15,7 +15,7 @@ export class PermissionsComponent implements OnInit {
     this.getAllUsers();
   }
 
-  serverPath = "http://localhost:8080";
+  serverPath = "http://localhost:8000";
 
   users: User[] = [{ id: 1, email: "qwe", role: "USER" },
   { id: 2, email: "asd", role: "USER" },

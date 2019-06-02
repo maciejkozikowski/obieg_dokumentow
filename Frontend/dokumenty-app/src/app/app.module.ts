@@ -35,7 +35,7 @@ const appRoutes: Routes = [
     component: UserPageComponent
   },
   {
-    path: 'admin',
+    path: 'panadmin',
     component: AdminPageComponent
   },
   {
