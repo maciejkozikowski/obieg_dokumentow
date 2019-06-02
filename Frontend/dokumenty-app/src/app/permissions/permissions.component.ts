@@ -24,7 +24,7 @@ export class PermissionsComponent implements OnInit {
   dodajUprawnienie(user: User) {
     console.log(JSON.stringify(user)); //w JSON
     user.role = "ADMIN";
-    let url = "/user/asd";
+    let url = "/user/permissions";
     this.http.post(this.serverPath + url, user).subscribe(
       isValid => {
         //window.location.reload();
@@ -35,7 +35,7 @@ export class PermissionsComponent implements OnInit {
   }
 
   getAllUsers() {
-    let url = "user/all";
+    let url = "/user/all";
     this.http.get<User[]>(this.serverPath + url).subscribe(
       res => {
         this.users = res;

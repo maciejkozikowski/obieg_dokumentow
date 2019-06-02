@@ -48,11 +48,12 @@ export class AdddelComponent implements OnInit {
   onSubmit() {
     const formData = new FormData();
     formData.append('file', this.fileData);
-    this.http.post("http://localhost:8080/api/file", formData)
+    this.http.post("http://localhost:8080/user/files", formData)
       .subscribe(res => {
         console.log(res);
         alert('SUCCESS !!');
-      })
+      },
+      err => {console.log(err);})
   }
 
 }
