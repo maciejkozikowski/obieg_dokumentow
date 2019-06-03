@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { Doc } from "../doc"
+import { FilterPipe } from '../filter.pipe';
 
 @Component({
   selector: 'app-approval',
@@ -7,9 +10,57 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApprovalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    //this.getDocs();
   }
+
+  filterargs = {name: 'hello'};
+  query;
+
+  docs: Doc[] = [{ name: "Dok1", path: "asd.pdf", user: "Jan", opis: "xDDD", status: "nie" },
+  { name: "qwe", path: "gggg", user: "ASD", opis: "ASD", status: "nie" },
+  { name: "asd", path: "dddd", user: "DSA", opis: "ASD", status: "tak" },
+  { name: "zxc", path: "rrrr", user: "123", opis: "ASD", status: "nie" }];
+
+  serverPath = "http://localhost:8000";
+
+  zatwierdz(doc: Doc) {
+    console.log(JSON.stringify(doc)); //w JSON
+    doc.status = "przyjęty";
+    let url = "/user/file";
+    this.http.post(this.serverPath + url, doc).subscribe(
+      isValid => {
+        //window.location.reload();
+        console.log(JSON.stringify(doc));
+      },
+      err => { alert("Error: server not responding"); }
+    );
+  }
+  odrzuc(doc: Doc) {
+    console.log(JSON.stringify(doc)); //w JSON
+    doc.status = "odrzucony";
+    let url = "/user/file";
+    this.http.post(this.serverPath + url, doc).subscribe(
+      isValid => {
+        //window.location.reload();
+        console.log(JSON.stringify(doc));
+      },
+      err => { alert("Error: server not responding"); }
+    );
+  }
+
+  /*getDocs() {
+    let url = "/user/files";
+    this.http.get<Doc[]>(this.serverPath + url).subscribe(
+      res => {
+        this.docs = res;
+      },
+      err => {
+        alert("Error: server not responding!")
+      }
+    );
+  }*/
 
 }

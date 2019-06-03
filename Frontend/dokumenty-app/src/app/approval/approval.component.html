@@ -1,2 +1,31 @@
 <!-- przeglądanie plików do zatwierdzenia-->
-przeglądanie plików do zatwierdzenia
+<div class="container-fluid">
+    <h2>Dokumenty do zatwierdzenia</h2>
+
+    <div class="row">
+        <label>Search: <input [(ngModel)]="query" type="text"/></label>
+        <table class="table table-bordered table-hover table-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <th>nazwa</th>
+                    <th>plik</th>
+                    <th>właściciel</th>
+                    <th>opis</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let doc of docs | FilterPipe:query">
+                    <th>{{doc.name}}</th>
+                    <td><a href="{{doc.path}}">{{doc.path}}</a></td>
+                    <td>{{doc.user}}</td>
+                    <td><input type="textarea" [(ngModel)]="doc.opis" value="{{doc.opis}}"></td>
+                    <td><button type="button" class="btn btn-info" (click)="zatwierdz(doc)">Zatwierdź</button></td>
+                    <td><button type="button" class="btn btn-danger" (click)="odrzuc(doc)">Odrzuć</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

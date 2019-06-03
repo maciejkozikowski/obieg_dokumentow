@@ -1,29 +1,20 @@
 <!-- przeglądanie plików usera -->
-<div class="container " style="overflow-y:scroll;overflow-x:hidden;height:500px !important;min-width:148px;position:relative;left:3%;">
-  <h1>przeglądanie plików usera</h1>
-  <div>
-      <figure class="figure" style="float: left;">
-        <img src="https://acrobat.adobe.com/content/dam/doc-cloud/images/icon-convert-pdf-to-word-145x145@2x.png" class="figure-img img-fluid rounded" alt="PLaceholder">
-        <figcaption class="figure-caption">Podpis</figcaption>
-      </figure>
+<div class="container "
+    style="overflow-y:scroll;overflow-x:hidden;height:400px !important;min-width:108px;position:relative;left:3%;">
+    <h1>Moje pliki</h1>
+    <div>
 
-      <figure class="figure" style="float: left;">
-          <img src="https://acrobat.adobe.com/content/dam/doc-cloud/images/icon-convert-pdf-to-word-145x145@2x.png" class="figure-img img-fluid rounded" alt="PLaceholder">
-          <figcaption class="figure-caption">Podpis</figcaption>
-      </figure>
-    
-      <figure class="figure">
-          <img src="https://acrobat.adobe.com/content/dam/doc-cloud/images/icon-convert-pdf-to-word-145x145@2x.png" class="figure-img img-fluid rounded" alt="PLaceholder">
-          <figcaption class="figure-caption">Podpis</figcaption>
-      </figure>
-      <figure class="figure">
-          <img src="https://acrobat.adobe.com/content/dam/doc-cloud/images/icon-convert-pdf-to-word-145x145@2x.png" class="figure-img img-fluid rounded" alt="PLaceholder">
-          <figcaption class="figure-caption">Podpis</figcaption>
-      </figure>
-      <figure class="figure">
-          <img src="https://acrobat.adobe.com/content/dam/doc-cloud/images/icon-convert-pdf-to-word-145x145@2x.png" class="figure-img img-fluid rounded" alt="PLaceholder">
-          <figcaption class="figure-caption">Podpis</figcaption>
-      </figure>
-  </div>
+        <figure *ngFor="let doc of docs" class="figure" style="float: left;">
+            <a href="{{doc.path}}">
+                <img src="https://acrobat.adobe.com/content/dam/doc-cloud/images/icon-convert-pdf-to-word-145x145@2x.png"
+                    class="figure-img img-fluid rounded" alt="PLaceholder">
+            </a>
+            <figcaption class="figure-caption">
+                <p>Nazwa: {{doc.name}}</p>
+                <p>Opis: {{doc.opis}}</p>
+                <p>Status: {{doc.status}}</p>
+            </figcaption>
+        </figure>
+
+    </div>
 </div>
-

@@ -19,6 +19,7 @@ import { SuperadminPageComponent } from './superadmin-page/superadmin-page.compo
 import { ApprovalComponent } from './approval/approval.component';
 import { PermissionsComponent } from './permissions/permissions.component';
 import { FileUploadModule } from 'ng2-file-upload';
+import { FilterPipe } from './filter.pipe';
 
 //ścierzki w adresie URL 
 const appRoutes: Routes = [
@@ -75,7 +76,8 @@ const appRoutes: Routes = [
     AdminPageComponent,
     SuperadminPageComponent,
     ApprovalComponent,
-    PermissionsComponent
+    PermissionsComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
