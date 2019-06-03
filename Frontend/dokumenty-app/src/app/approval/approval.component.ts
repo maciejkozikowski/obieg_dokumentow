@@ -16,13 +16,12 @@ export class ApprovalComponent implements OnInit {
     //this.getDocs();
   }
 
-  filterargs = {name: 'hello'};
   query;
 
   docs: Doc[] = [{ name: "Dok1", path: "asd.pdf", user: "Jan", opis: "xDDD", status: "nie" },
   { name: "qwe", path: "gggg", user: "ASD", opis: "ASD", status: "nie" },
   { name: "asd", path: "dddd", user: "DSA", opis: "ASD", status: "tak" },
-  { name: "zxc", path: "rrrr", user: "123", opis: "ASD", status: "nie" }];
+  { name: "umowa.pdf", path: "dok/umowa.pdf", user: "allah@boom.c4", opis: "nic", status: "oczekujący" }];
 
   serverPath = "http://localhost:8000";
 
@@ -38,6 +37,7 @@ export class ApprovalComponent implements OnInit {
       err => { alert("Error: server not responding"); }
     );
   }
+  
   odrzuc(doc: Doc) {
     console.log(JSON.stringify(doc)); //w JSON
     doc.status = "odrzucony";
@@ -51,8 +51,8 @@ export class ApprovalComponent implements OnInit {
     );
   }
 
-  /*getDocs() {
-    let url = "/user/files";
+  getDocs() {
+    let url = "/user/files/all";
     this.http.get<Doc[]>(this.serverPath + url).subscribe(
       res => {
         this.docs = res;
@@ -61,6 +61,6 @@ export class ApprovalComponent implements OnInit {
         alert("Error: server not responding!")
       }
     );
-  }*/
+  }
 
 }

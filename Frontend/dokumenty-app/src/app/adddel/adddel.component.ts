@@ -20,6 +20,8 @@ export class AdddelComponent implements OnInit {
   ngOnInit() {
   }
 
+  opis;
+  
   /*upload()
   {
     alert("Comming soon!");

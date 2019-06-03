@@ -1,10 +1,9 @@
 <!-- przeglądanie plików usera -->
-<div class="container "
-    style="overflow-y:scroll;overflow-x:hidden;height:400px !important;min-width:108px;position:relative;left:3%;">
+<div class="container">
     <h1>Moje pliki</h1>
+    <label>Filtruj: <input [(ngModel)]="query" type="text" placeholder="podaj klucz" /></label>
     <div>
-
-        <figure *ngFor="let doc of docs" class="figure" style="float: left;">
+        <figure *ngFor="let doc of docs | FilterPipe:query" class="figure" style="max-height: 100px; padding:20px;">
             <a href="{{doc.path}}">
                 <img src="https://acrobat.adobe.com/content/dam/doc-cloud/images/icon-convert-pdf-to-word-145x145@2x.png"
                     class="figure-img img-fluid rounded" alt="PLaceholder">
@@ -15,6 +14,5 @@
                 <p>Status: {{doc.status}}</p>
             </figcaption>
         </figure>
-
     </div>
 </div>

@@ -1,6 +1,6 @@
 <!-- dodawanie plików przez usera -->
-dodawanie plików przez usera
 <div>
+  <h2>Dodaj dokument</h2>
 
   <!--<input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
   <button class="btn btn-primary" (click)="upload()">Upload</button>-->
@@ -8,17 +8,19 @@ dodawanie plików przez usera
   <div class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <h3>Choose File</h3>
+        <h3>Wybierz plik</h3>
         <form (ngSubmit)="onSubmit()">
           <div class="form-group">
             <input type="file" name="image" />
+            Opis: <input type="text" [(ngModel)]="opis">
           </div>
           <div class="form-group">
-            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-primary">Wyślij</button>
           </div>
         </form>
+        <br>
+        <br>
       </div>
     </div>
   </div>
-
 </div>
