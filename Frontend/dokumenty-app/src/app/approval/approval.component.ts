@@ -18,16 +18,16 @@ export class ApprovalComponent implements OnInit {
 
   query;
 
-  docs: Doc[] = [{ name: "Dok1", path: "asd.pdf", user: "Jan", opis: "xDDD", status: "nie" },
+  docs: Doc[] /*= [{ name: "Dok1", path: "asd.pdf", user: "Jan", opis: "xDDD", status: "nie" },
   { name: "qwe", path: "gggg", user: "ASD", opis: "ASD", status: "nie" },
   { name: "asd", path: "dddd", user: "DSA", opis: "ASD", status: "tak" },
-  { name: "umowa.pdf", path: "dok/umowa.pdf", user: "allah@boom.c4", opis: "nic", status: "oczekujący" }];
+  { name: "umowa.pdf", path: "dok/umowa.pdf", user: "allah@boom.c4", opis: "nic", status: "oczekujący" }]*/;
 
   serverPath = "http://localhost:8000";
 
   zatwierdz(doc: Doc) {
     console.log(JSON.stringify(doc)); //w JSON
-    doc.status = "przyjęty";
+    doc.stan = "przyjęty";
     let url = "/user/file";
     this.http.post(this.serverPath + url, doc).subscribe(
       isValid => {
@@ -40,7 +40,7 @@ export class ApprovalComponent implements OnInit {
   
   odrzuc(doc: Doc) {
     console.log(JSON.stringify(doc)); //w JSON
-    doc.status = "odrzucony";
+    doc.stan = "odrzucony";
     let url = "/user/file";
     this.http.post(this.serverPath + url, doc).subscribe(
       isValid => {

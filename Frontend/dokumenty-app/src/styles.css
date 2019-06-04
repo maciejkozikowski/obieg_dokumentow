@@ -25,6 +25,19 @@ body{
   width: 100%;
 }
 
+.docInfo{
+  background-color: rgb(14, 189, 174);
+  color: rgb(255, 255, 255);
+  padding: 3px;
+  margin: 5px;
+}
+
+figure{
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid gray;
+}
+
 /* style do validacji inputów */
 .ng-valid[required], 
 .ng-valid.required  {

@@ -26,7 +26,10 @@ export class ListdocumentComponent implements OnInit {
     console.log("Eamil: " + localStorage.getItem('email'));
   }
 
-  docs: Doc[];
+  docs: Doc[] = [{ name: "Dok1", email: "asd.pdf", opis: "Jan", stan: "xDDD", date: "nie" },
+  { name: "Dok1", email: "asd.pdf", opis: "Jan", stan: "xDDD", date: "nie" },
+  { name: "Dok1", email: "asd.pdf", opis: "Jan", stan: "xDDD", date: "nie" },
+  { name: "Dok1", email: "asd.pdf", opis: "Jan", stan: "xDDD", date: "nie" }];
 
   serverPath = "http://localhost:8000";
 

@@ -1,7 +1,7 @@
 export class Doc {
-    name:String;
-    path: String;
-    user:String;
-    opis:String;
-    status:String;
+    name: String;
+    email: String;
+    opis: String;
+    stan: String;
+    date: String;
 }

@@ -3,15 +3,16 @@
     <h1>Moje pliki</h1>
     <label>Filtruj: <input [(ngModel)]="query" type="text" placeholder="podaj klucz" /></label>
     <div>
-        <figure *ngFor="let doc of docs | FilterPipe:query" class="figure" style="max-height: 100px; padding:20px;">
-            <a href="{{doc.path}}">
+        <figure *ngFor="let doc of docs | FilterPipe:query" class="figure">
+            <a href="http://localhost:8000/{{doc.name}}" target="_blank">
                 <img src="https://acrobat.adobe.com/content/dam/doc-cloud/images/icon-convert-pdf-to-word-145x145@2x.png"
                     class="figure-img img-fluid rounded" alt="PLaceholder">
             </a>
             <figcaption class="figure-caption">
-                <p>Nazwa: {{doc.name}}</p>
-                <p>Opis: {{doc.opis}}</p>
-                <p>Status: {{doc.status}}</p>
+                <p class="docInfo">Nazwa: {{doc.name}}</p>
+                <p class="docInfo">Opis: {{doc.opis}}</p>
+                <p class="docInfo">Status: {{doc.stan}}</p>
+                <p class="docInfo">Data: {{doc.date}}</p>
             </figcaption>
         </figure>
     </div>
