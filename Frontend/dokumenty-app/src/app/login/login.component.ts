@@ -30,9 +30,17 @@ export class LoginComponent implements OnInit {
           let res = data[0];
           this.userA.isAuthenticated = res['isAuthenticated'];
           this.userA.userClass = res['userClass'];
-          if(this.userA.isAuthenticated == true)
-          {
+          if (this.userA.isAuthenticated == true) {
             alert("USER");
+            if (this.userA.userClass == "Admin") {
+              location.assign("/panadmin");
+            }
+            else if (this.userA.userClass == "Super Admin") {
+              location.assign("/superadmin");
+            }
+            else if (this.userA.userClass == "Standard user") {
+              location.assign("/user");
+            }
           }
         },
         /*isValid => { //gdy się zalogujemy
@@ -46,8 +54,7 @@ export class LoginComponent implements OnInit {
 
 }
 
-export class userAuth
-{
+export class userAuth {
   isAuthenticated;
-  userClass:String;
+  userClass: String;
 }
