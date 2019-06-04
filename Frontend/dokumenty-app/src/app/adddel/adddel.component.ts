@@ -79,14 +79,16 @@ export class AdddelComponent implements OnInit {
     this.http.post("http://localhost:8000/user/file", fd)
       .toPromise().then(
         data => {
+          let res = data;
           console.log(data);
-          if (data['isSaved'] === true) {
+          console.log(res['isSaved']);
+          if (res['isSaved'] === true) {
             console.log("Zapisano");
             this.addDocument();
           }
-          else console.log(data['error']);
+          else console.log(res['error']);
         },
-        error => { console.log(error) });
+        error => { console.log(error); });
   }
 
   addDocument() {
