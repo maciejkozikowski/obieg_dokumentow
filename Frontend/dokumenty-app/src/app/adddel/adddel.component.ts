@@ -23,47 +23,12 @@ export class AdddelComponent implements OnInit {
   }
 
   opis = "";
-  userEmail = null;
+  userEmail = "";
 
   getLocal() {
     this.userEmail = localStorage.getItem('email');
+    alert("Eamil: " + localStorage.getItem('email'));
   }
-
-  /*upload()
-  {
-    alert("Comming soon!");
-  }*/
-
-  /*fileChange(event) {
-    let fileList: FileList = event.target.files;
-    if(fileList.length > 0) {
-        let file: File = fileList[0];
-        let formData:FormData = new FormData();
-        formData.append('uploadFile', file, file.name);
-        this.http.post("http://localhost:8000/api/file", formData)
-            .subscribe(
-                data => console.log('success'),
-                error => console.log(error)
-            )
-    }
-}*/
-
-  /*fileData: File = null;
-
-  fileProgress(fileInput: any) {
-    this.fileData = <File>fileInput.target.files[0];
-  }
-
-  onSubmit() {
-    const formData = new FormData();
-    formData.append('file', this.fileData);
-    this.http.post("http://localhost:8000/user/files", formData)
-      .subscribe(res => {
-        console.log(res);
-        alert('SUCCESS !!');
-      },
-        err => { console.log(err); })
-  }*/
 
   selectedFile: File = null;
 
@@ -101,22 +66,6 @@ export class AdddelComponent implements OnInit {
         },
         error => { console.log(error); });
   }
-
-
-
-
-
-  //.toPromise().then( data => console.log(data), error => console.log(error) );
-
-
-  /*.subscribe(
-          res => {
-            console.log(res);
-          }
-        )*/
-
-
-
 
 
 

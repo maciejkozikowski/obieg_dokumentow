@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
           //this.userA.userClass = res['userClass'];
           if (res['isAuthenticated'] === true) {
             this.setLocal(loginForm.email);
+            alert("Email: " + loginForm.email);
             if (res['userClass'] == "Admin") {
               //location.assign("/panadmin");
               this.router.navigate(['/panadmin']);
