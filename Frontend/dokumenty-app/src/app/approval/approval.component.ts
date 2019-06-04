@@ -70,6 +70,8 @@ export class ApprovalComponent implements OnInit {
           //const blob = new Blob([data]);
           //const adr = window.URL.createObjectURL(blob);
           //window.open(adr);
+          let asd = window.URL.createObjectURL(data);
+          window.open(asd);
         }
       );
   }
