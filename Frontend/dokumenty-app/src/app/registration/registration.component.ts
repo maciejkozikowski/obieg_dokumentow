@@ -24,7 +24,7 @@ export class RegistrationComponent implements OnInit {
       let url = "/user/registration"; //ścierzka do rejstracji 
       this.http.post(this.serverPath + url, registrationForm.value).subscribe(
         isValid => { //gdy się zarejstrujemu
-          location.assign("/index");
+          location.assign("");
         },
         err => { alert("Error: server not responding") } //gdy jest błąd
       );

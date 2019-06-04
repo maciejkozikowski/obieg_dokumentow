@@ -22,9 +22,12 @@ export class LoginComponent implements OnInit {
       console.log(loginForm.value); //loginForm.value - objekt w JSON
       let url = "/user/login"; //ścierzka do logowania 
       this.http.post(this.serverPath + url, loginForm.value).subscribe(
-        isValid => { //gdy się zalogujemy
+        data  => {
+          console.log("POST Request is successful ", data);
+          },
+        /*isValid => { //gdy się zalogujemy
           location.assign("/user");
-        },
+    },*/
         err => { alert("Error: server not responding") } //gdy jest błąd
       );
     }
