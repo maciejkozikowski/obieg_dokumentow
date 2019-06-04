@@ -27,7 +27,7 @@ export class AdddelComponent implements OnInit {
 
   getLocal() {
     this.userEmail = localStorage.getItem('email');
-    alert("Eamil: " + localStorage.getItem('email'));
+    console.log("Eamil: " + localStorage.getItem('email'));
   }
 
   selectedFile: File = null;
