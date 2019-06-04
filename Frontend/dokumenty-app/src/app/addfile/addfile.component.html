@@ -3,7 +3,7 @@
     <h4>Dodaj dokument bez logowania</h4>
     <input type="file" (change)="onFileSelected($event)" accept=".txt,.pdf,.rtf,.doc,.docx,.odt,.xml,.jpg,.png">
     <br>
-    <br>Email: <input type="text" [(ngModel)]="userEmail" name="userEmail">
+    <br>Email: <input type="text" [(ngModel)]="userEmail" name="userEmail" minlength="3" [email]="true" placeholder="name@example.com" required>
     <br>
     <br>
     <button type="button" (click)="onUpload()" class="btn btn-info">Wyślij</button>
