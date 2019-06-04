@@ -13,6 +13,7 @@ export class PermissionsComponent implements OnInit {
 
   ngOnInit() {
     this.getAllUsers();
+    console.log(this.users2);
   }
 
   serverPath = "http://localhost:8000";
