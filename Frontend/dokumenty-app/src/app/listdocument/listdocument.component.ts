@@ -47,7 +47,7 @@ export class ListdocumentComponent implements OnInit {
   }
 
   getDocs() {
-    let url = "/user/files/";
+    let url = "/user/files";
     this.http.post(url, { "email": this.userEmail })
       .subscribe(
         data => {
