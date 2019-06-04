@@ -27,11 +27,10 @@ export class LoginComponent implements OnInit {
         data => {
           console.log("POST Request is successful ", data);
           //this.userA = data;
-          let res = data[0];
-          this.userA.isAuthenticated = res['isAuthenticated'];
-          this.userA.userClass = res['userClass'];
+          //let res = data[0];
+          this.userA.isAuthenticated = data['isAuthenticated'];
+          this.userA.userClass = data['userClass'];
           if (this.userA.isAuthenticated == true) {
-            alert("USER");
             if (this.userA.userClass == "Admin") {
               location.assign("/panadmin");
             }
@@ -42,6 +41,7 @@ export class LoginComponent implements OnInit {
               location.assign("/user");
             }
           }
+          else if (this.userA.isAuthenticated == false) alert("Not authenticated");
         },
         /*isValid => { //gdy się zalogujemy
           location.assign("/user");
