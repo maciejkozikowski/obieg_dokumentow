@@ -17,15 +17,15 @@ export class PermissionsComponent implements OnInit {
 
   serverPath = "http://localhost:8000";
 
-  users: User[] = [{ id: 1, email: "qwe", role: "USER" },
-  { id: 2, email: "asd", role: "USER" },
-  { id: 3, email: "zxc", role: "ADMIN" }];
+  users: User[] = [{ id: 1, email: "qwe" },
+  { id: 2, email: "asd" },
+  { id: 3, email: "zxc" }];
 
   dodajUprawnienie(user: User) {
     console.log(JSON.stringify(user)); //w JSON
-    user.role = "ADMIN";
+    let role = "ADMIN";
     let url = "/user/permissions";
-    this.http.post(this.serverPath + url, user).subscribe(
+    this.http.post(this.serverPath + url, { "id": user.id, "email": user.email, "role": "Admin" } ).subscribe(  //{ "id": user.id, "email": user.email, "role": "Admin" }
       isValid => {
         //window.location.reload();
         console.log(JSON.stringify(user));
