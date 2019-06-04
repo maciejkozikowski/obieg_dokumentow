@@ -7,6 +7,11 @@ aktualizacja: python -m pip install --upgrade pip
 back: https://github.com/Michaye/ObiegDokumentow_back/tree/dzialajacyfront
 front: https://github.com/maciejkozikowski/obieg_dokumentow/tree/Mateusz
 
+! Robicie ng build na froncie
+stworzy to folder dist/dokumenty-app
+kopiujecie pliki
+wklejacie do backu do src/static !
+
 pip install django
 pip install django-cors-headers
 pip install djangorestframework
