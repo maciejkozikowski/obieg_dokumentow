@@ -32,7 +32,7 @@ const appRoutes: Routes = [
     component: IndexComponent
   },
   {
-    path: 'user',
+    path: 'panuser',
     component: UserPageComponent
   },
   {

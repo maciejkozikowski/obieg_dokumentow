@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
               location.assign("/superadmin");
             }
             else if (res['userClass'] == "Standard user") {
-              location.assign("/user");
+              location.assign("/panuser");
             }
           }
           else if (res['isAuthenticated'] === false) alert("Not authenticated");
