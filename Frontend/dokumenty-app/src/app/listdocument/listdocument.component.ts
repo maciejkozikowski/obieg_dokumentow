@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Doc } from "../doc"
+import { Routes } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listdocument',
@@ -9,7 +11,7 @@ import { Doc } from "../doc"
 })
 export class ListdocumentComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     //this.getUserDocs();
@@ -24,6 +26,9 @@ export class ListdocumentComponent implements OnInit {
 
   getLocal() {
     this.userEmail = localStorage.getItem('email');
+    if (localStorage.getItem('email') == null || localStorage.getItem('email') == "") {
+      this.router.navigate(['/index']);
+    }
     console.log("Eamil: " + localStorage.getItem('email'));
   }
 
@@ -34,7 +39,7 @@ export class ListdocumentComponent implements OnInit {
 
   serverPath = "http://localhost:8000";
 
-  getUserDocs() {
+  /*getUserDocs() {
     let url = "/user/files/" + this.userId;
     this.http.get<Doc[]>(this.serverPath + url).subscribe(
       res => {
@@ -45,7 +50,7 @@ export class ListdocumentComponent implements OnInit {
         alert("Error: server not responding!")
       }
     );
-  }
+  }*/
 
   getDocs() {
     let url = "/user/files";
@@ -54,7 +59,7 @@ export class ListdocumentComponent implements OnInit {
         data => {
           console.log(JSON.stringify(data));
           let res = data["user documents"];
-          res = this.docs;
+          this.docs = res;
           console.log(res);
         },
         error => { console.log(error) }
