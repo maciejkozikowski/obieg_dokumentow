@@ -14,18 +14,19 @@ export class PermissionsComponent implements OnInit {
   ngOnInit() {
     this.getAllUsers();
     console.log(this.users);
+    console.log(JSON.stringify(this.users));
   }
 
   serverPath = "http://localhost:8000";
 
-  users:User[];
+  users: User[];
   //users2 = this.users['Standard Users'];
 
   dodajUprawnienie(user: User) {
     console.log(JSON.stringify(user)); //w JSON
     let role = "ADMIN";
     let url = "/user/permissions";
-    this.http.post(this.serverPath + url, { "id": user['id'], "email": user['email'], "role": "Admin" } ).subscribe(  //{ "id": user.id, "email": user.email, "role": "Admin" }
+    this.http.post(this.serverPath + url, { "id": user['id'], "email": user['email'], "role": "Admin" }).subscribe(  //{ "id": user.id, "email": user.email, "role": "Admin" }
       isValid => {
         //window.location.reload();
         console.log(JSON.stringify(user));
@@ -38,8 +39,9 @@ export class PermissionsComponent implements OnInit {
     let url = "/user/all";
     this.http.get<User[]>(this.serverPath + url).subscribe(
       res => {
-        this.users = res["Standard Users"];
+        this.users = res;
         console.log(JSON.stringify(res));
+        console.log(res);
       },
       err => {
         alert("Error: server not responding!")
