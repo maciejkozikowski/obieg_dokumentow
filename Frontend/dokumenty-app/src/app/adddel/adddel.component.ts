@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpRequest, HttpEvent } from '@angular/common/http';
 import { Observable } from "rxjs";
@@ -21,13 +21,13 @@ export class AdddelComponent implements OnInit {
   }
 
   opis;
-  
+
   /*upload()
   {
     alert("Comming soon!");
-  }
+  }*/
 
-  fileChange(event) {
+  /*fileChange(event) {
     let fileList: FileList = event.target.files;
     if(fileList.length > 0) {
         let file: File = fileList[0];
@@ -41,7 +41,7 @@ export class AdddelComponent implements OnInit {
     }
 }*/
 
-  fileData: File = null;
+  /*fileData: File = null;
 
   fileProgress(fileInput: any) {
     this.fileData = <File>fileInput.target.files[0];
@@ -55,7 +55,36 @@ export class AdddelComponent implements OnInit {
         console.log(res);
         alert('SUCCESS !!');
       },
-      err => {console.log(err);})
+        err => { console.log(err); })
+  }*/
+
+  selectedFile: File = null;
+
+  onFileSelected(event) {
+    console.log(event);
+    this.selectedFile = <File>event.target.files[0];
+    console.log(this.selectedFile);
   }
+
+  onUpload(): void {
+    const fd = new FormData();
+    fd.append('filename', this.selectedFile, this.selectedFile.name);
+    this.http.post("http://localhost:8000/user/file", fd)
+      .toPromise().then(data => console.log(data), error => console.log(error));
+  }
+
+  //.toPromise().then( data => console.log(data), error => console.log(error) );
+
+
+  /*.subscribe(
+          res => {
+            console.log(res);
+          }
+        )*/
+
+
+
+
+
 
 }
