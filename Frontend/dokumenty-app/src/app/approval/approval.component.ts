@@ -23,11 +23,11 @@ export class ApprovalComponent implements OnInit {
 
   zatwierdz(doc: Doc) {
     console.log(JSON.stringify(doc)); //w JSON
-    doc.stan = "zatwierdzony";
+    doc.stan = "Zatwierdzony";
     let url = "/user/file/approval";
     this.http.post(this.serverPath + url, { "name": doc.name, "stan": doc.stan }).subscribe(
       isValid => {
-        window.location.reload();
+        //window.location.reload();
         console.log(JSON.stringify(doc));
       },
       err => { alert("Error: server not responding"); }
@@ -36,11 +36,11 @@ export class ApprovalComponent implements OnInit {
 
   odrzuc(doc: Doc) {
     console.log(JSON.stringify(doc)); //w JSON
-    doc.stan = "odrzucony";
+    doc.stan = "Odrzucony";
     let url = "/user/file/approval";
     this.http.post(this.serverPath + url, { "name": doc.name, "stan": doc.stan }).subscribe(
       isValid => {
-        window.location.reload();
+        //window.location.reload();
         console.log(JSON.stringify(doc));
       },
       err => { alert("Error: server not responding"); }

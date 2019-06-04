@@ -1,12 +1,10 @@
 <!-- dodawanie plików bez logowania -->
 <div>
-    <p>Dodaj dokument bez logowania</p>
-    <label for="document">Wybierz plik tekstowy lub pdf:</label>
-    <form role="form">
-        <div class="form-group">
-            <input type="file" id="document" name="avatar"
-                accept=".txt,.pdf,.rtf,.doc,.docx,.odt,.css,.html,.htm,.xml,.wps">
-        </div>
-        <button type="submit" class="btn btn-primary">Wyślij</button>
-    </form>
+    <h4>Dodaj dokument bez logowania</h4>
+    <input type="file" (change)="onFileSelected($event)" accept=".txt,.pdf,.rtf,.doc,.docx,.odt,.xml,.jpg,.png">
+    <br>
+    <br>Email: <input type="text" [(ngModel)]="userEmail" name="userEmail">
+    <br>
+    <br>
+    <button type="button" (click)="onUpload()" class="btn btn-info">Wyślij</button>
 </div>
