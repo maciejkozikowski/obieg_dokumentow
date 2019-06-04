@@ -22,7 +22,7 @@ export class AdddelComponent implements OnInit {
     this.getLocal();
   }
 
-  opis;
+  opis = "";
   userEmail = null;
 
   getLocal() {
@@ -76,6 +76,7 @@ export class AdddelComponent implements OnInit {
   onUpload(): void {
     const fd = new FormData();
     fd.append('filename', this.selectedFile, this.selectedFile.name);
+    console.log("Nazwa pliku: " + this.selectedFile.name);
     this.http.post("http://localhost:8000/user/file", fd)
       .toPromise().then(
         data => {
