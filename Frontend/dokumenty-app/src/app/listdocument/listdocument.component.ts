@@ -15,6 +15,7 @@ export class ListdocumentComponent implements OnInit {
     //this.getUserDocs();
     this.getLocal();
     this.getDocs();
+    console.log(this.docs);
   }
 
   query;
@@ -26,10 +27,10 @@ export class ListdocumentComponent implements OnInit {
     console.log("Eamil: " + localStorage.getItem('email'));
   }
 
-  docs: Doc[] = [{ name: "Dok1", email: "asd.pdf", opis: "Jan", stan: "xDDD", date: "nie" },
+  docs: Doc[] /*= [{ name: "Dok1", email: "asd.pdf", opis: "Jan", stan: "xDDD", date: "nie" },
   { name: "Dok1", email: "asd.pdf", opis: "Jan", stan: "xDDD", date: "nie" },
   { name: "Dok1", email: "asd.pdf", opis: "Jan", stan: "xDDD", date: "nie" },
-  { name: "Dok1", email: "asd.pdf", opis: "Jan", stan: "xDDD", date: "nie" }];
+  { name: "Dok1", email: "asd.pdf", opis: "Jan", stan: "xDDD", date: "nie" }]*/;
 
   serverPath = "http://localhost:8000";
 
@@ -52,7 +53,9 @@ export class ListdocumentComponent implements OnInit {
       .subscribe(
         data => {
           console.log(JSON.stringify(data));
-
+          let res = data['user documents'];
+          res = this.docs;
+          console.log(res);
         },
         error => { console.log(error) }
       )

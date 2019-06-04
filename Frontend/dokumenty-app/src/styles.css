@@ -38,6 +38,10 @@ figure{
   border: 1px solid gray;
 }
 
+.btn-group{
+  background-color: red;
+}
+
 /* style do validacji inputów */
 .ng-valid[required], 
 .ng-valid.required  {
