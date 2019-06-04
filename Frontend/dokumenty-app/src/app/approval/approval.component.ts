@@ -49,9 +49,11 @@ export class ApprovalComponent implements OnInit {
 
   getDocs() {
     let url = "/user/files/all";
-    this.http.get<Doc[]>(this.serverPath + url).subscribe(
+    this.http.get(this.serverPath + url).subscribe(
       res => {
-        this.docs = res['documents'];
+        console.log(res);
+        this.docs = res["documents"];
+        console.log(this.docs);
       },
       err => {
         alert("Error: server not responding!")
