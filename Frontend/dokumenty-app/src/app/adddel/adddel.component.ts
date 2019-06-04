@@ -92,8 +92,11 @@ export class AdddelComponent implements OnInit {
   addDocument() {
     this.http.post("http://localhost:8000/user/doc", { "filename": this.selectedFile.name, "user": this.userEmail, "opis": this.opis })
       .subscribe(
-        data => { console.log(data) },
-        error => { console.log(error) });
+        data => {
+          console.log(data);
+          console.log({ "filename": this.selectedFile.name, "user": this.userEmail, "opis": this.opis });
+        },
+        error => { console.log(error); });
   }
 
 
