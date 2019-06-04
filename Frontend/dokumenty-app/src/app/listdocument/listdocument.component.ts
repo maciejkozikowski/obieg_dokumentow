@@ -12,10 +12,11 @@ export class ListdocumentComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    //this.getUserDocs();
+    this.getUserDocs();
   }
 
   query;
+  userId;
 
   docs: Doc[] = [{ name: "Dok1", path: "asd.pdf", user: "Jan", opis: "xDDD", status: "nie" },
   { name: "qwe", path: "gggg", user: "ASD", opis: "ASD", status: "nie" },
@@ -25,10 +26,11 @@ export class ListdocumentComponent implements OnInit {
   serverPath = "http://localhost:8000";
 
   getUserDocs() {
-    let url = "/user/files/id";
+    let url = "/user/files/" + this.userId;
     this.http.get<Doc[]>(this.serverPath + url).subscribe(
       res => {
         this.docs = res;
+        console.log(res);
       },
       err => {
         alert("Error: server not responding!")
