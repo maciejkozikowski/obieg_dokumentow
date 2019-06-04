@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
 
   serverPath = "http://localhost:8000"; //adres serwera
 
+  userA: userAuth;
+
   //logowanie
   onLogin(loginForm) {
     if (loginForm.valid) //jeśli wszystkie pola są poprawne
@@ -22,9 +24,17 @@ export class LoginComponent implements OnInit {
       console.log(loginForm.value); //loginForm.value - objekt w JSON
       let url = "/user/login"; //ścierzka do logowania 
       this.http.post(this.serverPath + url, loginForm.value).subscribe(
-        data  => {
+        data => {
           console.log("POST Request is successful ", data);
-          },
+          //this.userA = data;
+          let res = data[0];
+          this.userA.isAuthenticated = res['isAuthenticated'];
+          this.userA.userClass = res['userClass'];
+          if(this.userA.isAuthenticated == true)
+          {
+            alert("USER");
+          }
+        },
         /*isValid => { //gdy się zalogujemy
           location.assign("/user");
     },*/
@@ -34,4 +44,10 @@ export class LoginComponent implements OnInit {
     else alert("Error");
   }
 
+}
+
+export class userAuth
+{
+  isAuthenticated;
+  userClass:String;
 }
