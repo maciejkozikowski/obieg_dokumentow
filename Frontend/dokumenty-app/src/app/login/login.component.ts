@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,8 @@ import { HttpClient } from "@angular/common/http";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private router: Router, ) { }
 
   ngOnInit() {
     //console.log(this.asd['0']);
@@ -42,13 +44,16 @@ export class LoginComponent implements OnInit {
           //this.userA.userClass = res['userClass'];
           if (res['isAuthenticated'] === true) {
             if (res['userClass'] == "Admin") {
-              location.assign("/panadmin");
+              //location.assign("/panadmin");
+              this.router.navigate(['/panadmin']);
             }
             else if (res['userClass'] == "Super Admin") {
-              location.assign("/superadmin");
+              //location.assign("/superadmin");
+              this.router.navigate(['/superadmin']);
             }
             else if (res['userClass'] == "Standard user") {
-              location.assign("/panuser");
+              //location.assign("/panuser");
+              this.router.navigate(['panuser']);
             }
           }
           else if (res['isAuthenticated'] === false) alert("Not authenticated");
