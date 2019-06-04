@@ -2,3 +2,15 @@ h2{
     text-align: center;
     padding: 20px;
 }
+
+h3{
+    padding: 10px;
+}
+
+input{
+    padding: 5px;
+}
+
+input:hover{
+    color: green;
+}

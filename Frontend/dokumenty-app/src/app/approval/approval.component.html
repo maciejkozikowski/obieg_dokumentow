@@ -3,7 +3,7 @@
     <h2>Dokumenty do zatwierdzenia</h2>
 
     <div class="row">
-        <label>Filtruj: <input [(ngModel)]="query" type="text" placeholder="podaj klucz"/></label>
+        <label>Filtruj: <input [(ngModel)]="query" type="text" placeholder="podaj klucz" /></label>
         <table class="table table-bordered table-hover table-sm">
             <thead class="thead-dark">
                 <tr>
@@ -11,6 +11,7 @@
                     <th>plik</th>
                     <th>właściciel</th>
                     <th>opis</th>
+                    <th>status</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -18,9 +19,10 @@
             <tbody>
                 <tr *ngFor="let doc of docs | FilterPipe:query">
                     <th>{{doc.name}}</th>
-                    <td><a href="{{doc.path}}">{{doc.path}}</a></td>
-                    <td>{{doc.user}}</td>
+                    <td><a href="{{doc.name}}">{{doc.name}}</a></td>
+                    <td>{{doc.email}}</td>
                     <td><input type="textarea" [(ngModel)]="doc.opis" value="{{doc.opis}}"></td>
+                    <td>{{doc.stan}}</td>
                     <td><button type="button" class="btn btn-info" (click)="zatwierdz(doc)">Zatwierdź</button></td>
                     <td><button type="button" class="btn btn-danger" (click)="odrzuc(doc)">Odrzuć</button></td>
                 </tr>

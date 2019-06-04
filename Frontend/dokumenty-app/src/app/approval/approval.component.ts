@@ -13,38 +13,34 @@ export class ApprovalComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    //this.getDocs();
+    this.getDocs();
   }
 
   query;
-
-  docs: Doc[] /*= [{ name: "Dok1", path: "asd.pdf", user: "Jan", opis: "xDDD", status: "nie" },
-  { name: "qwe", path: "gggg", user: "ASD", opis: "ASD", status: "nie" },
-  { name: "asd", path: "dddd", user: "DSA", opis: "ASD", status: "tak" },
-  { name: "umowa.pdf", path: "dok/umowa.pdf", user: "allah@boom.c4", opis: "nic", status: "oczekujący" }]*/;
+  docs: Doc[];
 
   serverPath = "http://localhost:8000";
 
   zatwierdz(doc: Doc) {
     console.log(JSON.stringify(doc)); //w JSON
-    doc.stan = "przyjęty";
-    let url = "/user/file";
-    this.http.post(this.serverPath + url, doc).subscribe(
+    doc.stan = "zatwierdzony";
+    let url = "/user/file/approval";
+    this.http.post(this.serverPath + url, { "name": doc.name, "stan": doc.stan }).subscribe(
       isValid => {
-        //window.location.reload();
+        window.location.reload();
         console.log(JSON.stringify(doc));
       },
       err => { alert("Error: server not responding"); }
     );
   }
-  
+
   odrzuc(doc: Doc) {
     console.log(JSON.stringify(doc)); //w JSON
     doc.stan = "odrzucony";
-    let url = "/user/file";
-    this.http.post(this.serverPath + url, doc).subscribe(
+    let url = "/user/file/approval";
+    this.http.post(this.serverPath + url, { "name": doc.name, "stan": doc.stan }).subscribe(
       isValid => {
-        //window.location.reload();
+        window.location.reload();
         console.log(JSON.stringify(doc));
       },
       err => { alert("Error: server not responding"); }
