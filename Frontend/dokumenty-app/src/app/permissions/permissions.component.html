@@ -12,10 +12,10 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody *ngFor="let user of users">
+            <tbody *ngFor="let user of users2">
                 <tr>
-                    <th>{{user.id}}</th>
-                    <td>{{user.email}}</td>
+                    <th>{{user['id']}}</th>
+                    <td>{{user['email']}}</td>
                     
                     <td><button type="button" class="btn btn-info" (click)="dodajUprawnienie(user)">Zmień na ADMIN</button></td>
                 </tr>

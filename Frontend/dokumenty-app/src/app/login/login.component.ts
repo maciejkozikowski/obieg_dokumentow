@@ -11,11 +11,19 @@ export class LoginComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    //console.log(this.asd['0']);
+    //console.log(this.qwe['0']['userClass']);
+    //console.log(this.asd2['userClass']);
+    //console.log(this.qwe2);
   }
 
   serverPath = "http://localhost:8000"; //adres serwera
 
-  userA: userAuth;
+  //userA: userAuth;
+  //asd =  { "lista":[{"isAuthenticated":false, "userClass":"Admin"}, {"isAuthenticated":true, "userClass":"User"}]};
+  //asd2 = { "isAuthenticated": false, "userClass": "Admin" };
+  //qwe = this.asd['lista'];
+  //qwe2 = this.asd2['userClass'];
 
   //logowanie
   onLogin(loginForm) {
@@ -27,23 +35,21 @@ export class LoginComponent implements OnInit {
         data => {
           console.log("POST Request is successful ", data);
           console.log(JSON.stringify(data));
-          //this.userA = data;
-          //let res = data[0];
-          let res = data[0];
-          this.userA.isAuthenticated = data['isAuthenticated'];
-          this.userA.userClass = data['userClass'];
-          if (this.userA.isAuthenticated === true) {
-            if (this.userA.userClass == "Admin") {
+          let res = data;
+          //this.userA.isAuthenticated = res['isAuthenticated'];
+          //this.userA.userClass = res['userClass'];
+          if (res['isAuthenticated'] === true) {
+            if (res['userClass'] == "Admin") {
               location.assign("/panadmin");
             }
-            else if (this.userA.userClass == "Super Admin") {
+            else if (res['userClass'] == "Super Admin") {
               location.assign("/superadmin");
             }
-            else if (this.userA.userClass == "Standard user") {
+            else if (res['userClass'] == "Standard user") {
               location.assign("/user");
             }
           }
-          else if (this.userA.isAuthenticated === false) alert("Not authenticated");
+          else if (res['isAuthenticated'] === false) alert("Not authenticated");
         },
         /*isValid => { //gdy się zalogujemy
           location.assign("/user");

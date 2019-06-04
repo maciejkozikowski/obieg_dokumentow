@@ -17,7 +17,8 @@ export class PermissionsComponent implements OnInit {
 
   serverPath = "http://localhost:8000";
 
-  users: User[];
+  users:object[];
+  users2 = this.users['Standard Users'];
 
   dodajUprawnienie(user: User) {
     console.log(JSON.stringify(user)); //w JSON
@@ -34,7 +35,7 @@ export class PermissionsComponent implements OnInit {
 
   getAllUsers() {
     let url = "/user/all";
-    this.http.get<User[]>(this.serverPath + url).subscribe(
+    this.http.get<object[]>(this.serverPath + url).subscribe(
       res => {
         this.users = res;
         console.log(JSON.stringify(res));
