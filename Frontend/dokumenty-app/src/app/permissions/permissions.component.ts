@@ -39,7 +39,7 @@ export class PermissionsComponent implements OnInit {
     let url = "/user/all";
     this.http.get<User[]>(this.serverPath + url).subscribe(
       res => {
-        this.users = res;
+        this.users = res['Standard Users'];
         console.log(JSON.stringify(res));
         console.log(res);
       },
