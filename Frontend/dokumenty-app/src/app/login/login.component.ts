@@ -27,6 +27,10 @@ export class LoginComponent implements OnInit {
   //qwe = this.asd['lista'];
   //qwe2 = this.asd2['userClass'];
 
+  setLocal(email) {
+    localStorage.setItem('email', email);
+  }
+
   //logowanie
   onLogin(loginForm) {
     if (loginForm.valid) //jeśli wszystkie pola są poprawne
@@ -43,6 +47,7 @@ export class LoginComponent implements OnInit {
           //this.userA.isAuthenticated = res['isAuthenticated'];
           //this.userA.userClass = res['userClass'];
           if (res['isAuthenticated'] === true) {
+            this.setLocal(loginForm.email);
             if (res['userClass'] == "Admin") {
               //location.assign("/panadmin");
               this.router.navigate(['/panadmin']);

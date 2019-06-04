@@ -6,6 +6,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { FileUploader } from 'ng2-file-upload';
 import { map } from 'rxjs/operators';
 import { HttpErrorResponse, HttpEventType } from '@angular/common/http';
+import { asTextData } from '@angular/core/src/view';
 
 //@Injectable()
 @Component({
@@ -18,9 +19,15 @@ export class AdddelComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.getLocal();
   }
 
   opis;
+  userEmail;
+
+  getLocal() {
+    this.userEmail = localStorage.getItem('email');
+  }
 
   /*upload()
   {
@@ -70,8 +77,28 @@ export class AdddelComponent implements OnInit {
     const fd = new FormData();
     fd.append('filename', this.selectedFile, this.selectedFile.name);
     this.http.post("http://localhost:8000/user/file", fd)
-      .toPromise().then(data => console.log(data), error => console.log(error));
+      .toPromise().then(
+        data => {
+          console.log(data);
+          if (data['isSaved'] === true) {
+            console.log("Zapisano");
+            this.addDocument();
+          }
+          else console.log(data['error']);
+        },
+        error => { console.log(error) });
   }
+
+  addDocument() {
+    this.http.post("http://localhost:8000/user/doc", { "filename": this.selectedFile.name, "user": this.userEmail, "opis": this.opis })
+      .subscribe(
+        data => { console.log(data) },
+        error => { console.log(error) });
+  }
+
+
+
+
 
   //.toPromise().then( data => console.log(data), error => console.log(error) );
 
