@@ -26,7 +26,7 @@ export class PermissionsComponent implements OnInit {
     console.log(JSON.stringify(user)); //w JSON
     let role = "ADMIN";
     let url = "/user/permissions";
-    this.http.post(this.serverPath + url, { "id": user['id'], "email": user['email'], "role": "Admin" }).subscribe(  //{ "id": user.id, "email": user.email, "role": "Admin" }
+    this.http.post(this.serverPath + url, { "id": user.id, "email": user.email, "role": "Admin" }).subscribe(  //{ "id": user.id, "email": user.email, "role": "Admin" }
       isValid => {
         //window.location.reload();
         console.log(JSON.stringify(user));
