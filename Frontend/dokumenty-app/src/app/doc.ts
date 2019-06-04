@@ -4,4 +4,5 @@ export class Doc {
     opis: String;
     stan: String;
     date: String;
+    id:Number;
 }

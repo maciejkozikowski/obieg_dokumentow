@@ -53,7 +53,7 @@ export class ListdocumentComponent implements OnInit {
       .subscribe(
         data => {
           console.log(JSON.stringify(data));
-          let res = data['user documents'];
+          let res = data["user documents"];
           res = this.docs;
           console.log(res);
         },
