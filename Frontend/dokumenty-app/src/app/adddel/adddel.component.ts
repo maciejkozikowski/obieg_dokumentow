@@ -23,7 +23,7 @@ export class AdddelComponent implements OnInit {
   }
 
   opis;
-  userEmail;
+  userEmail = null;
 
   getLocal() {
     this.userEmail = localStorage.getItem('email');
@@ -81,12 +81,12 @@ export class AdddelComponent implements OnInit {
         data => {
           let res = data;
           console.log(data);
-          console.log(res['isSaved']);
-          if (res['isSaved'] === true) {
+          console.log(res["isSaved"]);
+          if (res["isSaved"] === true) {
             console.log("Zapisano");
             this.addDocument();
           }
-          else console.log(res['error']);
+          else console.log(res["error"]);
         },
         error => { console.log(error); });
   }
