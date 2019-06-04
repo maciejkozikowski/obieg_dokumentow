@@ -17,9 +17,7 @@ export class PermissionsComponent implements OnInit {
 
   serverPath = "http://localhost:8000";
 
-  users: User[] = [{ id: 1, email: "qwe" },
-  { id: 2, email: "asd" },
-  { id: 3, email: "zxc" }];
+  users: User[];
 
   dodajUprawnienie(user: User) {
     console.log(JSON.stringify(user)); //w JSON
