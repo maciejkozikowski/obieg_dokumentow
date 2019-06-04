@@ -3,10 +3,26 @@ body{
     background-color: #FFD37B;
 }
 
-.buttonUser
-{
+.buttonUser{
     min-height: 100px;
     min-width: 150px;
+    border-radius: 10px;
+}
+
+.btn-info:disabled{
+  background-color: gray;
+  border: none;
+}
+
+.footer-copyright{
+  color: silver;
+}
+
+.page-footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 /* style do validacji inputów */

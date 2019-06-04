@@ -13,5 +13,10 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  logout()
+  {
+    alert("asdasdasd");
+  }
 }
 

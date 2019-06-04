@@ -12,11 +12,19 @@ export class ListdocumentComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.getUserDocs();
+    //this.getUserDocs();
+    this.getLocal();
+    this.getDocs();
   }
 
   query;
   userId;
+  userEmail = "";
+
+  getLocal() {
+    this.userEmail = localStorage.getItem('email');
+    console.log("Eamil: " + localStorage.getItem('email'));
+  }
 
   docs: Doc[] = [{ name: "Dok1", path: "asd.pdf", user: "Jan", opis: "xDDD", status: "nie" },
   { name: "qwe", path: "gggg", user: "ASD", opis: "ASD", status: "nie" },
@@ -36,6 +44,18 @@ export class ListdocumentComponent implements OnInit {
         alert("Error: server not responding!")
       }
     );
+  }
+
+  getDocs() {
+    let url = "/user/files/";
+    this.http.post(url, { "email": this.userEmail })
+      .subscribe(
+        data => {
+          console.log(JSON.stringify(data));
+
+        },
+        error => { console.log(error) }
+      )
   }
 
 }

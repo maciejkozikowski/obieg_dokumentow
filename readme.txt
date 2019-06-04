@@ -1,3 +1,22 @@
+### INSTALACJA ###
+Windows 10:
+download: z https://www.python.org/downloads/release/python-373/
+pip -V dla sprawdzenia wersji
+aktualizacja: python -m pip install --upgrade pip
+
+back: https://github.com/Michaye/ObiegDokumentow_back/tree/dzialajacyfront
+front: https://github.com/maciejkozikowski/obieg_dokumentow/tree/Mateusz
+
+pip install django
+pip install django-cors-headers
+pip install djangorestframework
+W src: python manage.py migrate
+Jeœli jest b³¹d ze spacjami: https://stackoverflow.com/questions/5685406/inconsistent-use-of-tabs-and-spaces-in-indentation lub w tym pliku zmieñcie tabulacje na spacje czy coœ takiego.
+python manage.py runserver
+inny port: runserver localhost:8080 
+
+-------------------------------------------------------------
+
 Logowanie:
 wys³anie - POST - http://localhost:8000/user/login
 JSON - {email: "asd@asd.asd", password: "123"}
