@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
           console.log(JSON.stringify(data));
           //this.userA = data;
           //let res = data[0];
+          let res = data[0];
           this.userA.isAuthenticated = data['isAuthenticated'];
           this.userA.userClass = data['userClass'];
           if (this.userA.isAuthenticated === true) {

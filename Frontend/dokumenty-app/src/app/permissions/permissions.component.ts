@@ -37,6 +37,7 @@ export class PermissionsComponent implements OnInit {
     this.http.get<User[]>(this.serverPath + url).subscribe(
       res => {
         this.users = res;
+        console.log(JSON.stringify(res));
       },
       err => {
         alert("Error: server not responding!")
