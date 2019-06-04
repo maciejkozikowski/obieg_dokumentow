@@ -17,7 +17,7 @@ export class ApprovalComponent implements OnInit {
   }
 
   query;
-  docs: Doc[];
+  docs: Doc[]; //= [{"name":"ASD","opis":"ASD","email":"qwe","id":1,"stan":"spoko","date":"123"}]
 
   serverPath = "http://localhost:8000";
 
