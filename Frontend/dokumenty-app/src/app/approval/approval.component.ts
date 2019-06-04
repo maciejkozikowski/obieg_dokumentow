@@ -61,4 +61,17 @@ export class ApprovalComponent implements OnInit {
     );
   }
 
+  downloadFile(name) {
+    let url = "/user/file/get";
+    this.http.post(this.serverPath + url, name)
+      .subscribe(
+        data => {
+          console.log(data);
+          //const blob = new Blob([data]);
+          //const adr = window.URL.createObjectURL(blob);
+          //window.open(adr);
+        }
+      );
+  }
+
 }
