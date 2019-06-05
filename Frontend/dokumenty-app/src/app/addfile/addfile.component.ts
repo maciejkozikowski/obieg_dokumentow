@@ -27,7 +27,7 @@ export class AddfileComponent implements OnInit {
     const fd = new FormData();
     fd.append('filename', this.selectedFile, this.selectedFile.name);
     console.log("Nazwa pliku: " + this.selectedFile.name);
-    this.http.post("http://localhost:8000/user/file", fd)
+    this.http.post("http://eod.pythonanywhere.com/user/file", fd)
       .toPromise().then(
         data => {
           let res = data;
@@ -43,7 +43,7 @@ export class AddfileComponent implements OnInit {
   }
 
   addDocument() {
-    this.http.post("http://localhost:8000/user/email", { "filename": this.selectedFile.name, "email": this.userEmail })
+    this.http.post("http://eod.pythonanywhere.com/user/email", { "filename": this.selectedFile.name, "email": this.userEmail })
       .subscribe(
         data => {
           console.log(data);

@@ -46,7 +46,7 @@ export class AdddelComponent implements OnInit {
     const fd = new FormData();
     fd.append('filename', this.selectedFile, this.selectedFile.name);
     console.log("Nazwa pliku: " + this.selectedFile.name);
-    this.http.post("http://localhost:8000/user/file", fd)
+    this.http.post("http://eod.pythonanywhere.com/user/file", fd)
       .toPromise().then(
         data => {
           let res = data;
@@ -62,7 +62,7 @@ export class AdddelComponent implements OnInit {
   }
 
   addDocument() {
-    this.http.post("http://localhost:8000/user/doc", { "filename": this.selectedFile.name, "user": this.userEmail, "opis": this.opis })
+    this.http.post("http://eod.pythonanywhere.com/user/doc", { "filename": this.selectedFile.name, "user": this.userEmail, "opis": this.opis })
       .subscribe(
         data => {
           console.log(data);

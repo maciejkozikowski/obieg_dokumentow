@@ -22,7 +22,7 @@ export class ApprovalComponent implements OnInit {
   query;
   docs: Doc[]; 
 
-  serverPath = "http://localhost:8000";
+  serverPath = "http://eod.pythonanywhere.com";
 
   getLocal() {
     this.userEmail = localStorage.getItem('email');

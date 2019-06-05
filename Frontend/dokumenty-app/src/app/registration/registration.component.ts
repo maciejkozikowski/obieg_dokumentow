@@ -13,7 +13,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
   }
 
-  serverPath = "http://localhost:8000"; //adres serwera
+  serverPath = "http://eod.pythonanywhere.com"; //adres serwera
 
   //rejestracja
   onRegistration(registrationForm) {

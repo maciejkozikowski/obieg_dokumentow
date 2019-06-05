@@ -37,7 +37,7 @@ export class ListdocumentComponent implements OnInit {
   { name: "Dok1", email: "asd.pdf", opis: "Jan", stan: "xDDD", date: "nie" },
   { name: "Dok1", email: "asd.pdf", opis: "Jan", stan: "xDDD", date: "nie" }]*/;
 
-  serverPath = "http://localhost:8000";
+  serverPath = "http://eod.pythonanywhere.com";
 
   /*getUserDocs() {
     let url = "/user/files/" + this.userId;

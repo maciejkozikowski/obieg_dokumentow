@@ -29,7 +29,7 @@ export class PermissionsComponent implements OnInit {
     console.log("Eamil: " + localStorage.getItem('email'));
   }
   
-  serverPath = "http://localhost:8000";
+  serverPath = "http://eod.pythonanywhere.com";
 
   users: User[];
   //users2 = this.users['Standard Users'];

@@ -4,7 +4,7 @@
     <label>Filtruj: <input [(ngModel)]="query" type="text" placeholder="podaj klucz" /></label>
     <div>
         <figure *ngFor="let doc of docs | FilterPipe:query" class="figure">
-            <a href="http://localhost:8000/{{doc.name}}" target="_blank">
+            <a href="http://eod.pythonanywhere.com/{{doc.name}}" target="_blank">
                 <img src="https://acrobat.adobe.com/content/dam/doc-cloud/images/icon-convert-pdf-to-word-145x145@2x.png"
                     class="figure-img img-fluid rounded" alt="PLaceholder">
             </a>

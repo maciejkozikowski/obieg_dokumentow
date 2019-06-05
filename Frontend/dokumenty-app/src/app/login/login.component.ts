@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     //console.log(this.qwe2);
   }
 
-  serverPath = "http://localhost:8000"; //adres serwera
+  serverPath = "http://eod.pythonanywhere.com"; //adres serwera
 
   //userA: userAuth;
   //asd =  { "lista":[{"isAuthenticated":false, "userClass":"Admin"}, {"isAuthenticated":true, "userClass":"User"}]};
