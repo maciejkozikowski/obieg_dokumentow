@@ -63,7 +63,7 @@ export class ApprovalComponent implements OnInit {
 
   downloadFile(name) {
     let url = "/user/file/get";
-    this.http.post(this.serverPath + url, name)
+    this.http.post(this.serverPath + url, { "name": name })
       .subscribe(
         data => {
           console.log(data);
