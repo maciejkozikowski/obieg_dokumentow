@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { HttpClient } from "@angular/common/http";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-permissions',
@@ -9,14 +10,25 @@ import { HttpClient } from "@angular/common/http";
 })
 export class PermissionsComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
+    this.getLocal();
     this.getAllUsers();
     console.log(this.users);
     console.log(JSON.stringify(this.users));
   }
 
+  userEmail = "";
+
+  getLocal() {
+    this.userEmail = localStorage.getItem('email');
+    if (localStorage.getItem('email') == null || localStorage.getItem('email') == "") {
+      this.router.navigate(['/index']);
+    }
+    console.log("Eamil: " + localStorage.getItem('email'));
+  }
+  
   serverPath = "http://localhost:8000";
 
   users: User[];

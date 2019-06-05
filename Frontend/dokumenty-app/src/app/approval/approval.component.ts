@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Doc } from "../doc"
 import { FilterPipe } from '../filter.pipe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-approval',
@@ -10,16 +11,26 @@ import { FilterPipe } from '../filter.pipe';
 })
 export class ApprovalComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
+    this.getLocal();
     this.getDocs();
   }
 
+  userEmail = "";
   query;
   docs: Doc[]; //= [{"name":"ASD","opis":"ASD","email":"qwe","id":1,"stan":"spoko","date":"123"}]
 
   serverPath = "http://localhost:8000";
+
+  getLocal() {
+    this.userEmail = localStorage.getItem('email');
+    if (localStorage.getItem('email') == null || localStorage.getItem('email') == "") {
+      this.router.navigate(['/index']);
+    }
+    console.log("Eamil: " + localStorage.getItem('email'));
+  }
 
   zatwierdz(doc: Doc) {
     console.log(JSON.stringify(doc)); //w JSON

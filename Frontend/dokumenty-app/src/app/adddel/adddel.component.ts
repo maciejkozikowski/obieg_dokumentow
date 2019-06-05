@@ -7,6 +7,7 @@ import { FileUploader } from 'ng2-file-upload';
 import { map } from 'rxjs/operators';
 import { HttpErrorResponse, HttpEventType } from '@angular/common/http';
 import { asTextData } from '@angular/core/src/view';
+import { Router } from '@angular/router';
 
 //@Injectable()
 @Component({
@@ -16,7 +17,7 @@ import { asTextData } from '@angular/core/src/view';
 })
 export class AdddelComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
     this.getLocal();
@@ -27,6 +28,9 @@ export class AdddelComponent implements OnInit {
 
   getLocal() {
     this.userEmail = localStorage.getItem('email');
+    if (localStorage.getItem('email') == null || localStorage.getItem('email') == "") {
+      this.router.navigate(['/index']);
+    }
     console.log("Eamil: " + localStorage.getItem('email'));
   }
 
