@@ -20,7 +20,7 @@ export class ApprovalComponent implements OnInit {
 
   userEmail = "";
   query;
-  docs: Doc[]; //= [{"name":"ASD","opis":"ASD","email":"qwe","id":1,"stan":"spoko","date":"123"}]
+  docs: Doc[]; 
 
   serverPath = "http://localhost:8000";
 
@@ -72,7 +72,7 @@ export class ApprovalComponent implements OnInit {
     );
   }
 
-  downloadFile(name) {
+  /*downloadFile(name) {
     let url = "/user/file/get";
     this.http.post(this.serverPath + url, { "name": name })
       .subscribe(
@@ -82,9 +82,10 @@ export class ApprovalComponent implements OnInit {
           //const adr = window.URL.createObjectURL(blob);
           //window.open(adr);
           let asd = window.URL.createObjectURL(data);
+          //window.location.href = this.serverPath + "/download?param=x"
           window.open(asd);
         }
       );
-  }
+  }*/
 
 }
